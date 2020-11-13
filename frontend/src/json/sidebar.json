@@ -1,0 +1,29 @@
+{
+  "sidebar": {
+    "0": {
+      "id": 0,
+      "position": 0,
+      "label": "Dashboard", 
+      "icon": "view-dashboard",
+      "icon_alt": "The text to display should the icon not be found",
+      "targetUrl": "/dashboard"
+    },
+    "1": {
+      "id": 1,
+      "position": 1,
+      "label": "Objects",
+      "icon": "home-group",
+      "icon_alt": "The text to display should the icon not be found",
+      "targetUrl": "/objects"
+    },
+    "2": {
+      "id": 2,
+      "position": 2,
+      "label": "Settings",
+      "icon": "settings",
+      "icon_alt": "The text to display should the icon not be found",
+      "targetUrl": "/settings"
+    }
+
+  }
+}

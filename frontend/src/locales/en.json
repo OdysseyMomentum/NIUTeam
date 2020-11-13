@@ -1,0 +1,6 @@
+{
+  "hello": "Hello i18n",
+  "test": "This is an english text",
+  "language": "Language",
+  "default": "This is the default Dashboard Child"
+}

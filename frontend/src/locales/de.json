@@ -1,0 +1,22 @@
+{
+  "hello": "Hallo i18n",
+  "test": "Das ist ein deutscher Text",
+  "Menu": "Menü",
+  "language": "Sprache",
+  "default": "Standard Dashboard-Kind",
+  "Profile": "Profil",
+  "About": "Über",
+  "Things": "Dinger",
+  "Objects": "Objekte",
+  "Logged as": "Eingeloggt als",
+  "Settings": "Einstellungen",
+  "Logout": "Ausloggen",
+  "Creation Date": "Erstellt am",
+  "Description": "Beschreibung",
+  "Save": "Speichern",
+  "Cancle": "Abbrechen",
+  "Edit": "Bearbeiten",
+  "Delete": "Löschen",
+  "Location": "Lage"
+  
+}

@@ -1,0 +1,38 @@
+{
+    "dummyObjects": {
+      "0": {
+        "id": 0,
+        "displayName": "Object0", 
+        "creationDate": "24 Sep 2020 08:17",
+        "location": "-24.22519, 117.50811",
+        "description": "Dummy Text",
+        "tags": ["Tag1"]
+      },
+      "1": {
+        "id": 1,
+        "displayName": "Object1", 
+        "creationDate": "22 Sep 2020 10:12",
+        "location": "-81.00040, 112.74156",
+        "description": "Dummy Text",
+        "tags": ["Tag1","Tag2"]
+      },
+      "2": {
+        "id": 2,
+        "displayName": "Object2", 
+        "creationDate": "20 Sep 2020 15:43",
+        "location": "9.10850, 99.43573",
+        "description": "Dummy Text",
+        "tags": ["Tag1","Tag2","Tag3"]
+      },
+      "3": {
+        "id": 3,
+        "displayName": "Object3", 
+        "creationDate": "19 Sep 2020 09:33",
+        "location": "36.30382, 104.66179",
+        "description": "Dummy Text",
+        "tags": ["Tag1","Tag2","Tag3","Tag4"]
+      }
+  
+    }
+  }
+  
