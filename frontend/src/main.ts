@@ -8,7 +8,9 @@ import Buefy from 'buefy'
 import './assets/scss/app.scss'
 import i18n from './i18n'
 import '@mdi/font/css/materialdesignicons.css'
+import vueFilterPrettyBytes from 'vue-filter-pretty-bytes'
 
+Vue.use(vueFilterPrettyBytes)
 Vue.use(Buefy)
 
 Vue.use(

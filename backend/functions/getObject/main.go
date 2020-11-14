@@ -24,8 +24,6 @@ func (objectGet *objectGetter) GetItem(partitionKey interface{}, rangeKey interf
 
 func handleGetObject(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-	//TODO: See if the user is allowed to get them
-
 	obj := objects.Object{}
 	commons.UnmarshallRequestBody(request.Body, &obj)
 	item, err := objectGet.GetItem(obj.UOI, "DETAILS")

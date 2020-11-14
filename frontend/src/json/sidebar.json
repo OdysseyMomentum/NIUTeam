@@ -16,9 +16,17 @@
       "icon_alt": "The text to display should the icon not be found",
       "targetUrl": "/objects"
     },
-    "2": {
-      "id": 2,
-      "position": 2,
+  "2": {
+    "id": 2,
+    "position": 2,
+    "label": "Profile",
+    "icon": "account",
+    "icon_alt": "The text to display should the icon not be found",
+    "targetUrl": "/profile"
+  },
+    "3": {
+      "id": 3,
+      "position": 3,
       "label": "Settings",
       "icon": "settings",
       "icon_alt": "The text to display should the icon not be found",

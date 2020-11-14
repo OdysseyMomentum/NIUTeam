@@ -3,7 +3,6 @@
     <AppHeader/>
     <Sidebar/>
     <router-view/>
-    <!-- <AppFooter/> -->
   </div>
 </template>
 
@@ -17,14 +16,12 @@ import AppFooter from '@/components/AppFooter.vue'
 @Component({
   components: {
     AppHeader,
-    Sidebar,
-    AppFooter
+    Sidebar
   }
 }
 )
 
 export default class Dashboard extends Vue {
-
 }
 </script>
 

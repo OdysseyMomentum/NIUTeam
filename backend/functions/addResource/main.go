@@ -80,9 +80,6 @@ func handleAddResource(ctx context.Context, request events.APIGatewayProxyReques
 		return commons.BuildResponse(500, err)
 	}
 
-	//TODO: Get all the users connected to this obj
-	//TODO: Batch insert all the user Resources
-
 	return commons.BuildResponse(200, resource)
 }
 

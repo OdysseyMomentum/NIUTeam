@@ -43,7 +43,6 @@ func userGetHandler(ctx context.Context, request events.APIGatewayProxyRequest) 
 	user := &users.User{}
 	user.Email, user.UserId = commons.GetUserProfileInfo(request)
 
-	//TODO: make this a bit better it does not look clean.
 	getResult, err := userGet.GetItem(user.Email, nil)
 	if err != nil {
 		if getResult != nil {

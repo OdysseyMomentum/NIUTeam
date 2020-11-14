@@ -41,7 +41,6 @@ func GetUserObjectSK(sortKey interface{}) string {
 func MarshallUserDetailsForDB(user User) (map[string]*dynamodb.AttributeValue, error) {
 	return dynamodbattribute.MarshalMap(struct {
 		*User
-		//OmitUserId string `json:"userId,omitempty"`
 
 		PK string `json:"PK"`
 		SK string `json:"SK"`

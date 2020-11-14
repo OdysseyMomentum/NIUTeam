@@ -106,7 +106,6 @@ func handleOnNewMail(ctx context.Context, bucketEvent events.S3Event) error {
 					return err
 				}
 				if !exists {
-					//TODO: We are not telling the the people sending the mail if this UO exists or not.
 					return errors.New("this object does not exist")
 				}
 

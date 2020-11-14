@@ -10,8 +10,6 @@ import (
 	"github.com/srbry/go-serverless-example/commons/objects"
 	"github.com/srbry/go-serverless-example/commons/resources"
 	"github.com/srbry/go-serverless-example/commons/users"
-	//TODO: Use mapstructure for the case of Resource Meta
-	//"github.com/mitchellh/mapstructure"
 	"os"
 )
 
@@ -26,7 +24,6 @@ func init() {
 	userObjectExistsCheck = userObjectExistsChecker{}
 }
 
-//TODO move to a separate function for better unit testing.
 func (telemetryList *telemetryLister) ListItems(partitionKey interface{}, keyPrefix interface{}) (interface{}, error) {
 	fmt.Printf("The partion key: %v, the sort key prefix: %v", partitionKey, keyPrefix)
 	return dbUtils.GetSensorData(os.Getenv("IOT_TABLE"), partitionKey.(string), keyPrefix.(resources.Range).Begin, keyPrefix.(resources.Range).End)

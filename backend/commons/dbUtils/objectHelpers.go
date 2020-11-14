@@ -67,7 +67,7 @@ func ListObjectsForUser(tableName string, userKey string) (interface{}, error) {
 		return nil, errors.New("no items found")
 	}
 
-	userObjs := []users.UserObject{}
+	var userObjs []users.UserObject
 	err = dynamodbattribute.UnmarshalListOfMaps(result.Items, &userObjs)
 	if err != nil {
 		return nil, err

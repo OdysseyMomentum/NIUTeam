@@ -51,25 +51,6 @@ func GetSensorData(tableName string, PK string, begin uint64, end uint64) (inter
 	fmt.Printf("The Table Name for IoT: %v\n", tableName)
 	queryInput := &dynamodb.QueryInput{
 		TableName: cTableName,
-	//	KeyConditions: map[string]*dynamodb.Condition{
-	//		"device_id": {
-	//			ComparisonOperator: aws.String("EQ"),
-	//			AttributeValueList: []*dynamodb.AttributeValue{
-	//				{S: aws.String(PK)},
-	//			},
-	//		},
-	//		"timestamp": {
-	//			ComparisonOperator: aws.String("BETWEEN"),
-	//			AttributeValueList: []*dynamodb.AttributeValue{
-	//				{
-	//					N: aws.String(strconv.FormatUint(begin, 10)),
-	//				},
-	//				{
-	//					N: aws.String(strconv.FormatUint(end, 10)),
-	//				},
-	//			},
-	//		},
-	//	},
 		ProjectionExpression: aws.String("device_id, #timestamp, altitude, co2_conc, humidity, illuminance,	motion_count, pressure, sound_level, temperature, voc_conc"),
 		ExpressionAttributeValues: map[string]*dynamodb.AttributeValue{
 			":partitionKey": {

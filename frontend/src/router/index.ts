@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '@/views/Home.vue'
 import { AuthGuard } from '@/auth/AuthGuard'
 import Dashboard from '@/views/Dashboard.vue'
 import DefaultDashboardView from '@/views/DefaultDashboardView.vue'
@@ -13,16 +12,12 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     beforeEnter: AuthGuard,
     component: () => {
-      // if ($auth.isAuthenticated) {
-      //   return import('@/views/Dashboard.vue');
-      // } else {
         return import('@/views/Home.vue');
       }
-    // }
   },
   {
     path: '/dashboard',
-    name: 'Dashboard',
+    // name: 'Dashboard',
     component: Dashboard,
     beforeEnter: AuthGuard,
     children: [
@@ -31,6 +26,12 @@ const routes: Array<RouteConfig> = [
         name: 'objects',
         component: () => import('@/views/Objects.vue'),
         alias: '/objects'
+      },
+      {
+        path: 'profile',
+        name: 'profile',
+        component: () => import('@/views/Profile.vue'),
+        alias: '/profile'
       },
       {
         path: 'settings',

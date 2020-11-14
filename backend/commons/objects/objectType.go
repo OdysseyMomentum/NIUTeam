@@ -8,11 +8,6 @@ import (
 	"github.com/srbry/go-serverless-example/commons/resources"
 )
 
-const (
-	ObjectPKPrefix = "UO"
-	ObjectSKPrefix = "UO"
-)
-
 type Object struct {
 	UOI            string                   `json:"uoi"`
 	DisplayName    string                   `json:"displayName"`

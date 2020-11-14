@@ -21,6 +21,5 @@ import AppFooter from '@/components/AppFooter.vue'
 })
 
 export default class Home extends Vue {
-
 }
 </script>

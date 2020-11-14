@@ -16,8 +16,6 @@ import (
 	"github.com/srbry/go-serverless-example/commons/objects"
 	"github.com/srbry/go-serverless-example/commons/resources"
 	"github.com/srbry/go-serverless-example/commons/users"
-	//TODO: Use mapstructure for the case of Resource Meta
-    //"github.com/mitchellh/mapstructure"
     "os"
 	"time"
 )
@@ -99,7 +97,6 @@ func handleResourceGet(ctx context.Context, request events.APIGatewayProxyReques
 			fmt.Printf("An Error occured while presigning: %v\n", err)
 			return commons.BuildResponse(500, "We have to investigate.")
 		}
-		//TODO see how we can convert the string map to a struct
 		resource.Meta.(map[string]interface{})["access"] = url
 	}
 

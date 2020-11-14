@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 
-export default class AppFooter extends Vue {
-}
+@Component
+export default class AppFooter extends Vue {}
 </script>
 
 <style scoped>

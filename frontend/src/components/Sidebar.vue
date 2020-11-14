@@ -32,7 +32,7 @@
 import { sidebar } from '@/json/sidebar.json'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
-@Component({})
+@Component
 export default class Sidebar extends Vue {
   public sidebar = JSON;
   public sidebarData = sidebar;
@@ -59,17 +59,6 @@ export default class Sidebar extends Vue {
   text-align: left;
 }
 
-// .sidebar-page {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     min-height: 100%;
-//     .sidebar-layout {
-//         display: flex;
-//         flex-direction: row;
-//         min-height: 100%;
-//     }
-// }
 @media screen and (max-width: 1023px) {
   .b-sidebar {
     .sidebar-content {
