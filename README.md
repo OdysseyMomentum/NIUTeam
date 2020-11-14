@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/OdysseyMomentum/NIUTeam?branch=main&token=b56aa973546fcea86a3885958be946bfce4c025f)](https://bettercodehub.com/) For more info, click [here](https://odysseymomentum.github.io).
+
 # NIUTeam
 Real Estate - Give Buildings a Personality
 
