@@ -109,13 +109,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { IUserType } from '@/types/UserType'
-import dateFormat from "dateformat";
+import dateFormat from 'dateformat'
 
-@Component
+@Component({})
 export default class Profile extends Vue {
   private cUser: IUserType
   private formatedBirthdate: string
-  
+
   constructor () {
     super()
     this.cUser = this.$store.state.user
@@ -123,7 +123,7 @@ export default class Profile extends Vue {
   }
 
   async putUser () {
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     console.log(accessToken)
     const result = await fetch(encodeURI('/api/user/update'), {
       method: 'PUT',

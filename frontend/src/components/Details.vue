@@ -137,7 +137,6 @@ import Weather from '@/components/Weather.vue'
 import { Component, Vue } from 'vue-property-decorator'
 import { IDocumentMeta, IResourceType } from '@/types/ResourceType'
 import { IObjectType } from '@/types/ObjectType'
-import { IUserType } from '@/types/UserType'
 import { ISensorDataType } from '@/types/SensorDataType'
 
 @Component({
@@ -173,7 +172,7 @@ export default class Details extends Vue {
   }
 
   private async addUser () {
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     fetch(encodeURI('/api/user/addToObject'), {
       method: 'POST',
       headers: {
@@ -199,7 +198,7 @@ export default class Details extends Vue {
 
   private async getSensorData (resourceId: number, startTime: Date, endTime: Date) {
     this.$store.state.cachedSensorID = resourceId
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     fetch(encodeURI('/api/telemetry/get'), {
       method: 'POST',
       headers: {
@@ -212,10 +211,6 @@ export default class Details extends Vue {
         resource: {
           resourceId: resourceId
         },
-        // range: {
-        //   begin: Math.round(Date.now() / 1000 - 43200),
-        //   end: Math.round(Date.now() / 1000)
-        // }
         range: {
           begin: Math.round(startTime.getTime() / 1000),
           end: Math.round(endTime.getTime() / 1000)
@@ -223,7 +218,7 @@ export default class Details extends Vue {
 
       })
     }).then(async response => {
-      const sensorData: ISensorDataType[] = await response.json() as ISensorDataType
+      const sensorData: ISensorDataType[] = await response.json() as ISensorDataType[]
 
       this.$store.state.chartData.timestamp = sensorData.map(i => i.timestamp * 1000)
       this.$store.state.chartData.altitude = sensorData.map(i => i.altitude)
@@ -245,7 +240,7 @@ export default class Details extends Vue {
 
   private async startDownload (resourceId: string) {
     console.log('Downloading: ' + resourceId)
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     fetch(encodeURI('/api/resource/get'), {
       method: 'POST',
       headers: {

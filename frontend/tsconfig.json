@@ -11,6 +11,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "strictNullChecks": false,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

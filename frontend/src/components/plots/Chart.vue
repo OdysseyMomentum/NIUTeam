@@ -23,14 +23,14 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Vue} from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import Chart from 'chart.js'
 import annotation from 'chartjs-plugin-annotation'
 Chart.plugins.register(annotation)
 
 @Component({})
 export default class LineChart extends Vue {
-  createChart(labelToDisplay: string, dataToDisplay: [], thresholdValue) {
+  createChart (labelToDisplay: string, dataToDisplay: [], thresholdValue: any) {
     const ctx: any = document.getElementById('chart')
     const thresholdHighArray = new Array(dataToDisplay.length).fill(thresholdValue)
     const myChart = new Chart(ctx, {
@@ -49,7 +49,7 @@ export default class LineChart extends Vue {
             data: thresholdHighArray,
             pointRadius: 0,
             borderColor: 'rgba(63, 191, 63, 0.16)',
-            backgroundColor: 'rgba(63, 191, 63, 0.1)',
+            backgroundColor: 'rgba(63, 191, 63, 0.1)'
           }
 
         ]

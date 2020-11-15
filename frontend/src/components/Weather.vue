@@ -26,32 +26,31 @@
 
 </template>
 
-
-
 <script lang="ts">
-
 
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import weather from 'openweather-apis'
-import {IWeatherType} from '@/types/WeatherType'
+import { IWeatherType } from '@/types/WeatherType'
 
 @Component
 export default class Weather extends Vue {
-
   private cWeather: IWeatherType
-    
-    constructor () {
-        super ()
-        weather.setLang(this.$i18n.locale);
-        weather.setCity(this.$store.state.object.city);
-        weather.setUnits('metric');
-        //API Code
-        weather.setAPPID('e69112f3b031f5aff360f016e024f9b8');
-        weather.getSmartJSON((err, data) => {
-            this.$store.state.weather = data
-        })
-        this.cWeather = this.$store.state.weather
-        }
+
+  constructor () {
+    super()
+    weather.setLang(this.$i18n.locale)
+    weather.setCity(this.$store.state.object.city)
+    weather.setUnits('metric')
+    // API Code
+    weather.setAPPID('e69112f3b031f5aff360f016e024f9b8')
+    weather.getSmartJSON((err: any, data: any) => {
+      if (err) {
+        console.log('an error happened')
+      }
+      this.$store.state.weather = data
+    })
+    this.cWeather = this.$store.state.weather
+  }
 }
 
 </script>

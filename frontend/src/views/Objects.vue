@@ -60,11 +60,10 @@
 <script lang="ts">
 import 'leaflet/dist/leaflet.css'
 import Details from '@/components/Details.vue'
-import ModalForm from '@/components/AddObjectModalForm.js'
 import { Component, Vue } from 'vue-property-decorator'
 import { IResourceType } from '@/types/ResourceType'
 import { IObjectType } from '@/types/ObjectType'
-import AddObjectModalForm from "@/components/AddObjectModalForm.vue";
+import AddObjectModalForm from '@/components/AddObjectModalForm.vue'
 
 @Component({
   components: {
@@ -75,24 +74,15 @@ export default class Things extends Vue {
   public rerenderKey = 0
   public show = false
   public isModalActive = false
-  public uoi = null
+  public uoi = ''
   public displayName = ''
   public description = ''
-  public geoCoordinates = {
-    latitude: null,
-    longitude: null
-  }
 
   public streetName = ''
-  public streetNumber = ''
-  public zipcode = null
   public city = ''
-  public country = ''
-
-  private resource: IResourceType
 
   async getObject (uoi: string) {
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     const result = await fetch(encodeURI('/api/object/get'), {
       method: 'POST',
       headers: {
@@ -109,7 +99,7 @@ export default class Things extends Vue {
   }
 
   async getResources (uoi: string) {
-    const accessToken = await this.$auth.getTokenSilently()
+    const accessToken = await this.$auth.getTokenSilently({})
     const result = await fetch(encodeURI('/api/resource/list'), {
       method: 'POST',
       headers: {

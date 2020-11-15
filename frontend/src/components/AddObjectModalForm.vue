@@ -65,8 +65,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { uuid } from 'vue-uuid'
-export default class Modalform extends Vue{
-
+export default class Modalform extends Vue {
   private displayName = ''
   private description = ''
   private uoi = uuid.v4()
@@ -78,31 +77,29 @@ export default class Modalform extends Vue{
 
   toast () {
     this.$buefy.toast.open({
-                    message: 'Ressource added, please reload the page!',
-                    type: 'is-success'
-                })
+      message: 'Ressource added, please reload the page!',
+      type: 'is-success'
+    })
   }
 
   async addObject () {
-    const accessToken = await this.$auth.getTokenSilently();
-    const result = await fetch(encodeURI("/api/object/add"), {
-      method: "POST",
+    const accessToken = await this.$auth.getTokenSilently({})
+    const result = await fetch(encodeURI('/api/object/add'), {
+      method: 'POST',
       headers: {
-        Authorization: "Bearer " + accessToken,
+        Authorization: 'Bearer ' + accessToken
       },
-      body: JSON.stringify({ uoi: this.uoi,
-                            description: this.description,
-                             displayName: this.displayName,
-                             streetName: this.streetName,
-                             streetNumber: this.streetNumber,
-                             city: this.city,
-                             zipcode: this.zipcode,
-                             country: this.country
-                             })                 
-    });
+      body: JSON.stringify({
+        uoi: this.uoi,
+        description: this.description,
+        displayName: this.displayName,
+        streetName: this.streetName,
+        streetNumber: this.streetNumber,
+        city: this.city,
+        zipcode: this.zipcode,
+        country: this.country
+      })
+    })
   }
-
-
-
 }
 </script>

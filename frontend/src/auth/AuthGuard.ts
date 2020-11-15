@@ -7,10 +7,10 @@ export const AuthGuard: NavigationGuard = (to, from, next) => {
   const fn = () => {
     unwatch && unwatch()
 
-    if(to.fullPath == "/" && authService.isAuthenticated){
-      return next("/dashboard")
+    if (to.fullPath === '/' && authService.isAuthenticated) {
+      return next('/dashboard')
     }
-    if(to.fullPath == "/" && !authService.isAuthenticated){
+    if (to.fullPath === '/' && !authService.isAuthenticated) {
       return next()
     }
     if (authService.isAuthenticated) {

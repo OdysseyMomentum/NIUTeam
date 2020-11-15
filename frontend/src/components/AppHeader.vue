@@ -46,10 +46,10 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator'
-import {IUserType} from '@/types/UserType'
-import {IObjectType} from '@/types/ObjectType'
-import {error} from "vue-i18n/src/util";
+import { Component, Vue } from 'vue-property-decorator'
+import { IUserType } from '@/types/UserType'
+import { IObjectType } from '@/types/ObjectType'
+import { error } from 'vue-i18n/src/util'
 
 @Component
 export default class AppHeader extends Vue {
@@ -59,26 +59,26 @@ export default class AppHeader extends Vue {
   private isPublic = true
   logo = require('@/assets/filedgr-logo.png')
 
-  private mounted() {
+  private mounted () {
     this.getUser()
     this.listObjects()
   }
 
-  login() {
+  login () {
     // eslint-disable-next-line @typescript-eslint/camelcase
-    this.$auth.loginWithRedirect({appState: {targetUrl: '/dashboard'}})
+    this.$auth.loginWithRedirect({ appState: { targetUrl: '/dashboard' } })
   }
 
-  logout() {
+  logout () {
     this.$auth.logout({
       returnTo: window.location.origin
     })
   }
 
-  async getUser() {
-    const accessToken = await this.$auth.getTokenSilently()
-    console.log(accessToken);
-    
+  async getUser () {
+    const accessToken = await this.$auth.getTokenSilently({})
+    console.log(accessToken)
+
     fetch(encodeURI('/api/user/get'), {
       method: 'POST',
       headers: {
@@ -89,12 +89,12 @@ export default class AppHeader extends Vue {
       this.$store.state.user = data
     })
       .catch(error => {
-        console.error("There was an error!", error)
+        console.error('There was an error!', error)
       })
   }
 
-  async listObjects() {
-    const accessToken = await this.$auth.getTokenSilently()
+  async listObjects () {
+    const accessToken = await this.$auth.getTokenSilently({})
 
     const result = await fetch(encodeURI('/api/object/list'), {
       method: 'POST',
@@ -105,7 +105,6 @@ export default class AppHeader extends Vue {
     const response: IObjectType[] = await result.json() as IObjectType[]
     this.$store.state.objects = response
   }
-
 }
 </script>
 
