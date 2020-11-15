@@ -25,3 +25,7 @@ Note we use an Auth0 free tier as an OICD provider, the frontend expects a file:
   "audience": ""
 }
 ```
+
+# PS:
+
+We added a lambda function to the code which performs entity resolution out of the documents we attach to the UOI. However we did not manage to integrate it anymore, but it works on many invoices we tested.
